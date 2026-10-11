@@ -2,6 +2,7 @@
 
 [![Master CI](https://img.shields.io/github/actions/workflow/status/e-semenyuk/devops-coursework-group-9/ci.yml?branch=master&label=master)](https://github.com/e-semenyuk/devops-coursework-group-9/actions/workflows/ci.yml?query=branch%3Amaster)
 [![Develop CI](https://img.shields.io/github/actions/workflow/status/e-semenyuk/devops-coursework-group-9/ci.yml?branch=develop&label=develop)](https://github.com/e-semenyuk/devops-coursework-group-9/actions/workflows/ci.yml?query=branch%3Adevelop)
+[![codecov](https://codecov.io/gh/e-semenyuk/devops-coursework-group-9/graph/badge.svg?branch=master)](https://codecov.io/gh/e-semenyuk/devops-coursework-group-9)
 ![GitHub Release](https://img.shields.io/github/v/release/e-semenyuk/devops-coursework-group-9)
 ![GitHub License](https://img.shields.io/github/license/e-semenyuk/devops-coursework-group-9)
 
@@ -11,7 +12,7 @@ The application will query the provided MySQL `world` database and generate the 
 
 ## Current status
 
-The repository contains the agreed project foundation shown below:
+The repository contains the agreed project foundation:
 
 - Java 17 and Maven build;
 - executable, self-contained JAR;
@@ -63,9 +64,9 @@ Place the coursework-provided SQL import file in `database/` before starting Com
 3. Keep commits small, meaningful, and authored by the person who did the work.
 4. Open a Pull Request into `develop` and link the issue with `Closes #<number>`.
 5. Obtain at least one team review and pass CI before merging.
-6. Use `release/*` for release preparation and merge approved releases into `master` and back into `develop`.
+6. Promote each release through `develop` → `release` → `master` → `develop`; tag the released `master` merge commit and publish the GitHub release.
 
-See [CONTRIBUTING.md](CONTRIBUTING.md), [Product Backlog](docs/PRODUCT_BACKLOG.md), and [Project Plan](docs/PROJECT_PLAN.md).
+See [CONTRIBUTING.md](CONTRIBUTING.md), [Product Backlog](docs/PRODUCT_BACKLOG.md), [Project Plan](docs/PROJECT_PLAN.md), and [Bug reporting](docs/BUG_REPORTING.md).
 
 ## Team
 
@@ -81,6 +82,9 @@ See [CONTRIBUTING.md](CONTRIBUTING.md), [Product Backlog](docs/PRODUCT_BACKLOG.m
 Additional members and formal Scrum roles will be recorded when confirmed by the team.
 
 ## Implemented reports
+
+**13 of 32 requirements have been implemented (40.625%).**
+This count covers reports merged into `master`; work on unmerged branches is excluded.
 
 | Requirement | Report | Implemented | Evidence |
 | --- | --- | --- | --- |
