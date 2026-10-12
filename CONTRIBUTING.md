@@ -4,11 +4,14 @@
 
 - `master`: assessed, released state only.
 - `develop`: integration branch for completed work.
-- `release`: stable release-preparation branch required by the coursework checklist.
+- `release`: permanent promotion branch between `develop` and `master`.
 - `feature/<issue>-<description>`: one scoped change, branched from `develop`.
 - `fix/<issue>-<description>`: defect correction, branched from `develop` unless the team agrees otherwise.
 
-Direct commits to `master`, `develop`, and `release` should be avoided after branch protection is enabled.
+Use reviewed Pull Requests for changes to `master` and `develop`. Keep the existing `release` branch.
+The team does not create a separate versioned release branch for each delivery. This keeps
+the required `master`, `develop`, and `release` branches visible and gives every release
+the same, auditable promotion path.
 
 ## Standard workflow
 
@@ -26,6 +29,23 @@ git push -u origin feature/12-country-report
 ```
 
 Open a Pull Request into `develop`, link its issue, request review, and wait for CI. The author must not approve their own Pull Request.
+
+## Release workflow
+
+`release` is the team's permanent promotion branch. For every release, follow this exact
+sequence:
+
+1. Merge completed feature PRs into `develop` after another team member reviews them and CI passes.
+2. In a reviewed PR to `develop`, prepare the release metadata: Maven version, README completion count, release notes, and verification evidence.
+3. Promote the reviewed `develop` tip with a PR from `develop` to `release`. Require one independent review and green CI; do not push directly to `release`.
+4. Run `mvn clean verify`, build the Docker image, and run the documented report checks with the agreed world database. Keep commands and sample results as evidence.
+5. Promote the approved `release` tip with a PR from `release` to `master`. Merge with a merge commit only after teammate review and passing CI.
+6. Tag that exact `master` merge commit (for example, `v0.2.0`) and publish the GitHub release from the tag. The Maven version and tag must refer to the same release version.
+7. Immediately open and merge a PR from `master` back into `develop`. This is required even if no file content changes, because it preserves the `master` release merge commit in `develop` ancestry.
+
+Do not rewrite existing merges, force-push protected branches, move published tags, or delete
+`master`, `develop`, or `release` to repair a missed release step. Delete a completed feature
+branch only after its changes are included in both `master` and `develop`.
 
 ## Commit conventions
 
