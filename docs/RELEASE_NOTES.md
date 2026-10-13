@@ -1,5 +1,13 @@
 # Release Notes
 
+## v0.2.1 — Metadata and Documentation Correction
+
+- Corrected the Maven project version for the patch release.
+- Updated the README report-completion summary to include all 19 implemented reports.
+- Added release notes and verification evidence for the preceding v0.2.0 release.
+
+This patch follows the published `v0.2.0` release. The existing `v0.2.0` tag remains unchanged.
+
 ## v0.2.0 — Population Reports and DevOps Improvements
 
 19 of 32 report requirements implemented (59.375%).
