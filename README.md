@@ -66,7 +66,7 @@ Place the coursework-provided SQL import file in `database/` before starting Com
 5. Obtain at least one team review and pass CI before merging.
 6. Promote each release through `develop` → `release` → `master` → `develop`; tag the released `master` merge commit and publish the GitHub release.
 
-See [CONTRIBUTING.md](CONTRIBUTING.md), [Product Backlog](docs/PRODUCT_BACKLOG.md), [Project Plan](docs/PROJECT_PLAN.md), and [Bug reporting](docs/BUG_REPORTING.md).
+See [CONTRIBUTING.md](CONTRIBUTING.md), [Product Backlog](docs/PRODUCT_BACKLOG.md), [Project Plan](docs/PROJECT_PLAN.md), [Bug reporting](docs/BUG_REPORTING.md), and [Release Notes](docs/RELEASE_NOTES.md).
 
 ## Team
 
@@ -83,11 +83,11 @@ Additional members and formal Scrum roles will be recorded when confirmed by the
 
 ## Implemented reports
 
-**13 of 32 requirements have been implemented (40.625%).**
-This count covers reports merged into `master`; work on unmerged branches is excluded.
+**19 of 32 requirements have been implemented (59.375%).**
 
 | Requirement | Report | Implemented | Evidence |
 | --- | --- | --- | --- |
+| PB-01 | Countries in the world by population | Yes | [Results](docs/reports/pb-01.md) |
 | PB-13 | Top N cities in a continent | Yes | [Results](docs/reports/pb-13.md) |
 | PB-14 | Top N cities in a region | Yes | [Results](docs/reports/pb-14.md) |
 | PB-15 | Top N cities in a country | Yes | [Results](docs/reports/pb-15.md) |
@@ -101,9 +101,11 @@ This count covers reports merged into `master`; work on unmerged branches is exc
 | PB-23 | Population distribution by continent | Yes | [Results](docs/reports/pb-23.md) |
 | PB-24 | Population distribution by region | Yes | [Results](docs/reports/pb-24.md) |
 | PB-25 | Population distribution by country | Yes | [Results](docs/reports/pb-25.md) |
-
-All thirteen reports above were also verified together through Docker Compose:
-[Docker end-to-end results](docs/reports/docker-e2e.md).
+| PB-26 | World population | Yes | [Results](docs/reports/pb-26.md) |
+| PB-27 | Selected continent population | Yes | [Results](docs/reports/pb-27.md) |
+| PB-30 | Selected district population | Yes | [Results](docs/reports/pb-30.md) |
+| PB-31 | Selected city population | Yes | [Results](docs/reports/pb-31.md) |
+| PB-32 | Five-language population report | Yes | [Results](docs/reports/pb-32.md) |
 
 Capital-city report commands and verification evidence are documented in
 [PB-17](docs/reports/pb-17.md), [PB-18](docs/reports/pb-18.md), [PB-19](docs/reports/pb-19.md), [PB-20](docs/reports/pb-20.md), [PB-21](docs/reports/pb-21.md), [PB-22](docs/reports/pb-22.md).
