@@ -21,8 +21,8 @@ final class CityReportCommand {
 
     static String usage() {
         return "City reports: PB-07 (or --cities-world-population) | "
-                || "--cities-continent-population".equals(command) || "PB-08".equals(command)
-                || "--cities-region-population".equals(command) || "PB-09".equals(command)
+                + "PB-08 (or --cities-continent-population) <continent> | "
+                + "PB-09 (or --cities-region-population) <region> | "
                 + "PB-13 (or --top-cities-continent) <continent> <N> | "
                 + "PB-14 (or --top-cities-region) <region> <N> | "
                 + "PB-15 (or --top-cities-country) <country> <N> | "
