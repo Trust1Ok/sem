@@ -11,6 +11,7 @@ final class CityReportCommand {
 
     static boolean supports(String command) {
         return "--cities-world-population".equals(command) || "PB-07".equals(command)
+                || "--cities-continent-population".equals(command) || "PB-08".equals(command)
                 || "--cities-region-population".equals(command) || "PB-09".equals(command)
                 || "--top-cities-continent".equals(command) || "PB-13".equals(command)
                 || "--top-cities-region".equals(command) || "PB-14".equals(command)
@@ -20,7 +21,8 @@ final class CityReportCommand {
 
     static String usage() {
         return "City reports: PB-07 (or --cities-world-population) | "
-                + "PB-09 (or --cities-region-population) <region> | "
+                || "--cities-continent-population".equals(command) || "PB-08".equals(command)
+                || "--cities-region-population".equals(command) || "PB-09".equals(command)
                 + "PB-13 (or --top-cities-continent) <continent> <N> | "
                 + "PB-14 (or --top-cities-region) <region> <N> | "
                 + "PB-15 (or --top-cities-country) <country> <N> | "
@@ -37,6 +39,10 @@ final class CityReportCommand {
                 case "PB-07", "--cities-world-population" -> {
                     requireArguments(args, 1);
                     yield repository.findAllByPopulation();
+                }
+                case "PB-08", "--cities-continent-population" -> {
+                    requireArguments(args, 2);
+                    yield repository.findByContinent(args[1]);
                 }
                 case "PB-09", "--cities-region-population" -> {
                     requireArguments(args, 2);
